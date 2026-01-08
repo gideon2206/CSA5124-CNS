@@ -1,0 +1,18 @@
+class HillCipher {
+    public static void main(String[] args) {
+        int[][] key = {{3, 3}, {2, 5}};
+        String text = "HI";
+        String enc = "";
+
+        int x = text.charAt(0) - 'A';
+        int y = text.charAt(1) - 'A';
+
+        enc += (char) ((key[0][0]*x + key[0][1]*y) % 26 + 'A');
+        enc += (char) ((key[1][0]*x + key[1][1]*y) % 26 + 'A');
+
+        System.out.println("Encrypted: " + enc);
+    }
+}
+
+OUTPUT:
+Encrypted: TC
