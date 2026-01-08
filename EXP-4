@@ -1,0 +1,22 @@
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+public class DES {
+    public static void main(String[] args) throws Exception {
+        String msg = "HELLO";
+        KeyGenerator kg = KeyGenerator.getInstance("DES");
+        SecretKey key = kg.generateKey();
+        Cipher enc = Cipher.getInstance("DES");
+        enc.init(Cipher.ENCRYPT_MODE, key);
+        byte[] encMsg = enc.doFinal(msg.getBytes());
+        Cipher dec = Cipher.getInstance("DES");
+        dec.init(Cipher.DECRYPT_MODE, key);
+        byte[] decMsg = dec.doFinal(encMsg);
+        System.out.println("Original : " + msg);
+        System.out.println("Decrypted: " + new String(decMsg));
+    }
+}
+
+OUTPUT:
+Original : HELLO
+Decrypted: HELLO
