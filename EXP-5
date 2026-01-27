@@ -4,7 +4,7 @@ import javax.crypto.SecretKey;
 import java.util.Base64;
 public class BlowfishExample {
     public static void main(String[] args) throws Exception {
-        String plainText = "HELLO WORLD";
+        String plainText = "Gideondevanbu";
         KeyGenerator keyGen = KeyGenerator.getInstance("Blowfish");
         SecretKey secretKey = keyGen.generateKey();
         Cipher encrypt = Cipher.getInstance("Blowfish");
@@ -21,7 +21,4 @@ public class BlowfishExample {
     }
 }
 
-OUTPUT:
-Plain Text : HELLO WORLD
-Encrypted  : h94yWV8s1IYHdi/NI9AzaQ==
-Decrypted  : HELLO WORLD
+
